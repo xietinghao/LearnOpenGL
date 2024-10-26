@@ -169,9 +169,10 @@ int main() {
 		view = camera.GetViewMatrix();
 		projection = glm::perspective(glm::radians(camera.Zoom), (float)WINDOW_WIDTH / WINDOW_HEIGHT, 0.1f, 100.f);
 
-		lightColor.x = 1.0f + static_cast<float>(sin(glfwGetTime() * 1.0f));
+		lightColor.x = 2.0f + static_cast<float>(sin(glfwGetTime()) * 2.0f);
 		lightColor.y = lightColor.z = lightColor.x;
 		glm::vec3 diffuseColor = lightColor * glm::vec3(0.5f);
+		glm::vec3 ambientColor = diffuseColor * glm::vec3(0.1f);
 		lightShader.Use();
 		lightShader.setMat4("model", model);
 		lightShader.setMat4("view", view);
@@ -201,7 +202,7 @@ int main() {
 		boxShader.setVec3("light.position", lightPos);
 		boxShader.setVec3("light.ambient", ambientColor);
 		boxShader.setVec3("light.diffuse", diffuseColor);
-		boxShader.setVec3("light.specular", glm::vec3(1.0f, 1.0f, 1.0f));
+		boxShader.setVec3("light.specular", lightColor);
 		
 		//材质属性
 		boxShader.setFloat("material.shininess", 32.f);
