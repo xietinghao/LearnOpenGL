@@ -40,7 +40,7 @@ void main(){
 	cameraDir = normalize(cameraPos - FragPos);
 	specular = light.specular * texture(material.specular, diffuseTexCoor).rgb * pow(max(dot(cameraDir, reflect(-lightDir, norm)), 0.0f), material.shininess);
 
-	emit = texture(material.emit, diffuseTexCoor).rgb;
+	emit = texture(material.emit, diffuseTexCoor).rgb * 0.35f;
 
 	vec3 phongResult = ambient + diffuse + specular + emit;
 	FragColor = vec4(phongResult, 1.0f);
