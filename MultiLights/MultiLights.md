@@ -15,4 +15,4 @@
  - 点光源: $\mathbf{Color}$ = (ambient + diffuse +specular) * $\mathbf{attenuation}$ ; <br>
  - 聚光源: $\mathbf{Color}$ = (ambient + diffuse +specular) * $\mathbf{attenuation}$ * $\mathbf{intensity}$ ; <br>
 使用上述phong着色模型建立顶点和片段着色器，渲染的结果能表现出不同类型光源对着色的影响。<br>
-<br>![MultiLights](https://github.com/xietinghao/LearnOpenGL/tree/main/MultiLights/MultiLights.gif)<br>
+<br>![MultiLights](https://github.com/xietinghao/LearnOpenGL/blob/main/MultiLights/MultiLights.gif)<br>
