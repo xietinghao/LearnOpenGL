@@ -6,7 +6,7 @@
 ## 聚光源：
 发射的光不是平行光，一般为特殊物件发出的光源（手电筒、聚光灯），和片元的入射角需要独立计算，同时需要计算入射角与聚光方向是否超出聚光半径。<br>
 超出外径时聚光不计入渲染结果，位于内径和外径间用: ($\theta$ - $\gamma$)/ $\epsilon$ 表示聚光强度值，<br>
- $\theta$ 为入射角和聚光方向的余弦值， $\gamma$ 为聚光外半径角的余弦值， $\epsilon$ = $\phi$ - $\gamma$, $\phi$ 为聚光内半径的余弦值。
+ $\theta$ 为入射角和聚光方向的余弦值， $\gamma$ 为聚光外半径角的余弦值， $\epsilon$ = $\phi$ - $\gamma$, $\phi$ 为聚光内半径的余弦值。<br>
 综上，聚光源的强度 $\mathbf{I}$ = clamp(($\theta$ - $\gamma$)/ $\epsilon$ , 0.0f, 1.0f)。
 ## 衰减
 光的能量在传播中的衰减参数随传播距离的变化为 $\mathbf{attenuation}$ = 1.0/(k<sub>c</sub> + k<sub>l</sub> * distance + k<sub>q</sub> * distance * distance)，表现为先快速衰减，后缓慢减少。
